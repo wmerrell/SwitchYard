@@ -7,7 +7,7 @@ by [Will Merrell](https://github.com/wmerrell/SwitchYard).
 ## License
 
 All source code in this project is available jointly under the Gnu Public License
-and the Beerware License. See [LICENSE.md](LICENSE.md) for details.
+and the Beerware License. See [LICENSE.md](/LICENSE.md) for details.
 
 ## Background
 
