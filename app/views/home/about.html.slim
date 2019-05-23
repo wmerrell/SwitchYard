@@ -1,0 +1,43 @@
+.intro
+  h2= @intro
+.content_body
+  = @content
+
+br/
+hr.hidden /
+
+= form_tag('/postmail') do
+  .tinytext
+    | All Fields are required.
+    br/
+    br/
+
+  .hidden
+    = label 'message', 'verify', 'Please leave this blank:'
+    = text_field 'message', 'verify', size: "50"
+
+  .field.required
+    = label 'message', 'name', 'Your Real Name:'
+    = text_field 'message', 'name', size: "50", title: "Your Name, so I know who's talking to me."
+
+  .field.required
+    = label 'message', 'email', 'Your EMail:'
+    = text_field 'message', 'email', size: "50", title: "I need a valid email, so I can talk back to you."
+
+  .field.required
+    = label 'message', 'subject', 'Subject:'
+    = text_field 'message', 'subject', size: "50", title: "What you want to talk about."
+
+  .field.required
+    = label 'message', 'text', 'Message:'
+    / = text_area 'message', 'text',  cols: "50", rows: "10", title: "What you want to say to me."
+    = text_area 'message', 'text',  title: "What you want to say to me."
+
+  .actions
+    = submit_tag "Send Message", title: "Click to send this message to me.", class: 'big-button'
+
+hr/
+.tinytext
+  | Icons used are courtesy of Mark James, the creator of the SILK icon set -
+  a(href="http://www.famfamfam.com/lab/icons/silk/")
+    | http://www.famfamfam.com/lab/icons/silk/

@@ -1,0 +1,31 @@
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - db/schema.rb
+    - db/seeds.rb
+
+Layout/EndOfLine:
+  Enabled: false
+  
+Metrics/AbcSize:
+  Max: 20
+
+Metrics/LineLength:
+  Description: 'Limit lines to 100 characters.'
+  StyleGuide: '#100-character-limits'
+  Max: 100
+  Exclude:
+    - config/routes.rb
+  
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 15 lines of code.'
+  Max: 15
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+  
+Style/SymbolArray:
+  EnforcedStyle: brackets

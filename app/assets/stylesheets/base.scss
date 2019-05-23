@@ -1,0 +1,529 @@
+
+/*
+* base.css.scss
+*
+*/
+
+/*
+* Skeleton V1.0.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 5/20/2011
+*/
+
+
+/* Table of Content
+==================================================
+	#Basic Styles
+	#Site Styles
+	#Typography
+	#Links
+	#Lists
+	#Images
+	#Buttons
+	#Tabs
+	#Forms
+	#Misc */
+
+@import "definitions";
+
+/* #Basic Styles
+================================================== */
+	body {
+		background-color: $main_backcolor;
+		color: $main_forecolor;
+		font: 14px/21px $serif_font;
+		font-family: $serif_font;
+ }
+
+
+/* #Typography
+================================================== */
+	h1, h2, h3, h4, h5, h6 {
+		color: #181818;
+		font-family: $serif_font;
+		font-weight: normal; }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
+	h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+	h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
+	h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+	h5 { font-size: 17px; line-height: 24px; }
+	h6 { font-size: 14px; line-height: 21px; }
+	.subheader { color: #777; }
+
+	p { margin: 0 0 8px 0; }
+	p img { margin: 0; }
+	p.lead { font-size: 21px; line-height: 27px; color: #777;  }
+
+	em { font-style: italic; }
+	strong { font-weight: bold; color: #333; }
+	small { font-size: 80%; }
+	big { font-size: 130%; }
+
+	.required {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		textarea {
+			background: #FFEFFC;
+		}
+		label:after { content: " *"; }
+	}
+	.thin { margin-top: 0; margin-bottom: 0; padding-top: 0; padding-bottom: 0; }
+	.selected {	background: #CFCDFF; }
+	.bold {	font-weight: bold; }
+	.italic {	font-style: italic;	}
+	.hidden {	visibility: hidden;	display: none; }
+	.small { font-size: 80%; }
+	.big { font-size: 130%; }
+	.tinynote {	font-size: 70%;	font-style: italic;	text-align: left;	margin: 0; }
+	.tinytext {	font-size: 70%;	}
+	.microtext { font-size: 50%; }
+	.nanotext {	font-size: 1pt;	}
+	.gray_out {	color: #afafaf;	}
+	.balance_due { background: #FF9999;	}
+	.paid_in_full {	background: #99FF99; }
+
+	.left {	text-align: left; }
+	.right { text-align: right;	}
+	.center {	text-align: center;	margin: auto;	}
+	.floatleft { float: left;	}
+	.floatright {	float: right;	}
+	.signature {
+		font-family: $signiture_font;
+		font-size: 1.2em;
+		font-style: italic;
+		margin: 1em 0 1em 15em;
+	}
+
+
+/*	Blockquotes  */
+	blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
+	blockquote { margin: 0 0 20px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+	blockquote cite { display: block; font-size: 12px; color: #555; }
+	blockquote cite:before { content: "\2014 \0020"; }
+	blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: #555; }
+
+	hr {
+		border: solid #ddd;
+		border-width: 1px 0 0;
+		height: 0;
+		clear: both;
+		margin: 5px 0 5px 0;
+	}
+
+
+/* #Links
+================================================== */
+	a, a:visited { color: #333; text-decoration: underline; outline: 0; }
+	a:hover, a:focus { color: #000; }
+	p a, p a:visited { line-height: inherit; }
+
+
+/* #Lists
+================================================== */
+	ul, ol { margin-bottom: 20px; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	ul ul, ul ol,
+	ol ol, ol ul { margin: 4px 0 5px 30px; font-size: 90%;  }
+	ul ul li, ul ol li,
+	ol ol li, ol ul li { margin-bottom: 6px; }
+	li { line-height: 18px; margin-bottom: 12px; }
+	ul.large li { line-height: 21px; }
+	li p { line-height: 21px; }
+
+/* #Images
+================================================== */
+
+	img.scale-with-grid {
+		max-width: 100%;
+		height: auto; }
+
+
+/* #Buttons
+================================================== */
+
+	a.button,
+	button,
+	p.button,
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"] {
+		background: #eee; /* Old browsers */
+		background: linear-gradient(top, rgba(255,255,255,.2) 0%,rgba(0,0,0,.2) 100%); /* W3C */
+		border: 1px solid #aaa;
+		border-top: 1px solid #ccc;
+		border-left: 1px solid #ccc;
+		padding: 4px 12px;
+		border-radius: 6px;
+		color: #444;
+		display: inline-block;
+		font-size: 13px;
+		font-weight: bold;
+		text-decoration: none;
+		text-shadow: 0 1px rgba(255, 255, 255, .75);
+		cursor: pointer;
+		margin-bottom: 20px;
+		line-height: 21px;
+		font-family: $sans_serif_font; }
+
+	a.button:hover,
+	button:hover,
+	input[type="submit"]:hover,
+	input[type="reset"]:hover,
+	input[type="button"]:hover {
+		color: #222;
+		background: #eee; /* Old browsers */
+		background: linear-gradient(top, rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%); /* W3C */
+		border: 1px solid #888;
+		border-top: 1px solid #aaa;
+		border-left: 1px solid #aaa; }
+
+	a.button:active,
+	button:active,
+	input[type="submit"]:active,
+	input[type="reset"]:active,
+	input[type="button"]:active {
+		background: #eee; /* Old browsers */
+		background: linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(255,255,255,.3) 100%); /* W3C */
+		border: 1px solid #888;
+		border-bottom: 1px solid #aaa;
+		border-right: 1px solid #aaa; }
+
+	.button.full-width,
+	button.full-width,
+	input[type="submit"].full-width,
+	input[type="reset"].full-width,
+	input[type="button"].full-width {
+		width: 100%;
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		text-align: center; }
+
+	.button.big-button,
+	button.big-button,
+	input[type="submit"].big-button,
+	input[type="reset"].big-button,
+	input[type="button"].big-button {
+		text-align: center;
+		padding: 0 1.5em .25em 1.5em;
+		font-family: $comic_font;
+		font-size: 18pt; }
+
+
+/* #Forms
+================================================== */
+
+	fieldset {
+		margin-bottom: 20px; }
+	input[type="text"],
+	input[type="number"],
+	input[type="password"],
+	input[type="email"],
+	textarea,
+	select {
+		border: 1px solid #ccc;
+		padding: 6px 4px;
+		outline: none;
+		border-radius: 2px;
+		font: 13px "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		color: #777;
+		margin: 0;
+		width: 160px;
+		max-width: 100%;
+		display: block;
+		margin-bottom: 20px;
+		background: #fff;
+	}
+	
+	input[type="text"]:focus,
+	input[type="number"]:focus,
+	input[type="password"]:focus,
+	input[type="email"]:focus,
+	textarea:focus {
+		border: 1px solid #aaa;
+		color: #444;
+		box-shadow:  0 0 3px rgba(0,0,0,.2); }
+	textarea {
+		min-height: 8em;
+		width: 99%; }
+	label,
+	legend {
+		display: block;
+		font-weight: bold;
+		font-size: 13px;
+		&.inline {
+			display: inline;
+		}
+	}
+	select {
+		width: 170px;
+		height: 30px;
+	}
+	input[type="checkbox"] {
+		display: inline; }
+	label span,
+	legend span {
+		font-weight: normal;
+		font-size: 13px;
+		color: #444; }
+
+	.display_field {
+		font-family: $sans_serif_font;
+		font-weight: normal;
+		font-size: 13pt;
+		b {
+			display: inline-block;
+			width: 100px;
+			text-align: right;
+			font-weight: bold;
+			font-size: 11pt;
+			padding: 0 0.5em 0 0;
+			vertical-align: baseline;
+		}
+		p {
+			display: inline-block;
+			width: 80%;
+		}
+	}
+
+	.field, actions {
+		display: block;
+	}
+	.column_field {
+		display: inline-block;
+	}
+
+/*	.container { position: relative; width: 960px; margin: 0 auto; padding: 0; }
+	.column, .columns { float: left; display: inline; margin-left: 10px; margin-right: 10px; }
+*/
+
+/* #Misc
+================================================== */
+	.remove-bottom { margin-bottom: 0 !important; }
+	.half-bottom { margin-bottom: 10px !important; }
+	.add-bottom { margin-bottom: 20px !important; }
+
+	/* Basic Classes
+	 * ---------------------------------------- */
+	.validationlogo {
+		float: left;
+		border: none;
+	}
+
+
+	.button_bar {
+		text-align: center;
+		margin: auto;
+		padding: 0 0 10px 0;
+	}
+
+	.big_button {
+		font-family: $comic_font;
+		font-size: 18pt;
+		text-align: center;
+		margin: auto;
+		padding: 2px 20px 4px 20px;
+	}
+
+	.uploadStatus {	margin: 5px; }
+
+	.progressBar {
+		margin: 5px;
+		div.border {
+			background-color: #fff;
+			border: 1px solid gray;
+			width: 100%;
+		}
+		div.background {
+			background-color: #333;
+			height: 18px;
+			width: 0%;
+		}
+	}
+
+	/* Flash Messages
+	 * ---------------------------------------- */
+	#flash_notice, #flash_warning {
+		background-color: #F2EAE4;
+		color: #2EAE2E;
+		margin: 0;
+		padding: 0.25em;
+		border: 1px solid #cccccc;
+	}
+
+	#flash_error {
+		background-color: #FF9494;
+		color: #AE2E2E;
+		margin: 0;
+		padding: 0.25em;
+		border: 1px solid red;
+	}
+
+	/* Error Messages
+	 * ---------------------------------------- */
+	.error, .error_message {
+		background-color: white;
+		color: red;
+		margin: 0;
+		padding: 0.25em;
+		border: 1px solid red;
+	}
+
+	#error_explanation {
+		background-color: #f0f0f0;
+		width: 400px;
+		margin-bottom: 20px;
+		padding: 7px;
+		padding-bottom: 12px;
+		border: 2px solid red;
+		h2 {
+			background-color: #c00;
+			color: #fff;
+			font-weight: bold;
+			font-size: 12px;
+			text-align: left;
+			margin: -7px -7px 0 -7px;
+			padding: 5px 5px 5px 15px;
+		}
+		p {
+			color: #333;
+			margin-bottom: 0;
+			padding: 5px;
+		}
+		li {
+			font-size: 12px;
+			list-style: square inside;
+		}
+	}
+
+	.fieldWithErrors {
+		padding: 2px;
+		background-color: red;
+		display: table;
+	}
+
+
+	/* Toolbar & Menu
+	 * ---------------------------------------- */
+	.toolbar {
+		background: $toolbar_backcolor;
+		color: $toolbar_forecolor;
+		padding: 0.25em;
+		@include raisedborder($toolbar_shadecolor, $toolbar_highcolor, 1px);
+		.separator {
+			@include raisedborder($toolbar_shadecolor, $toolbar_highcolor, 1px);
+		}
+	}
+	.links a {
+		background: transparent;
+		font-family: $sans_serif_font;
+		font-size: 0.9em;
+		font-weight: normal;
+		padding: 1px 1px 4px 1px;
+		border: 1px solid transparent;
+		text-decoration: none;
+		.menu_icon {
+			background: transparent;
+			vertical-align: top;
+			margin: 0;
+			padding: 1px;
+			border: 1px solid transparent;
+		}
+		&:hover {
+			background: $toolbar_hover_backcolor;
+			color: $toolbar_hover_forecolor;
+			@include raisedborder($toolbar_shadecolor, $toolbar_highcolor, 1px);
+			.menu_icon {
+				background: white;
+				@include raisedborder($toolbar_shadecolor, $toolbar_highcolor, 1px);
+			}
+		}
+		&:active {
+			background: $toolbar_active_backcolor;
+			color: $toolbar_active_forecolor;
+			@include raisedborder($toolbar_highcolor, $toolbar_shadecolor, 1px);
+			.menu_icon {
+				background: white;
+				@include raisedborder($toolbar_highcolor, $toolbar_shadecolor, 1px);
+			}
+		}
+	}
+
+	/* ToolTip
+	 * ---------------------------------------- */
+	.tooltip {
+		display: none;
+		background-color: #ffa;
+		border: 1px solid #cc9;
+		padding: 5px 10px;
+		max-width: 350px;
+		font-size: 13px;
+		-moz-box-shadow: 2px 2px 11px #666;
+		-webkit-box-shadow: 2px 2px 11px #666;
+	}
+
+	.menu_item {
+		background: #D2B48C;
+		display: block;
+		color: white;
+		font-family: $sans_serif_font;
+		margin: 1px 0 1px 0;
+		padding: 1px 0 1px 3px;
+		a {
+			color: #804513;
+			&:visited {
+				color: #b06030;
+			}
+			&:hover {
+				color: #FFFF80;
+				background: transparent;
+			}
+		}
+	}
+
+	.edit_icon {
+		background: transparent;
+		float: left;
+		position: absolute;
+		border: 1px solid transparent;
+		&:hover {
+			background: white;
+			@include raisedborder($toolbar_highcolor, $toolbar_shadecolor, 1px);
+		}
+		&:active {
+			background: white;
+			@include raisedborder($toolbar_shadecolor, $toolbar_highcolor, 1px);
+		}
+	}
+
+	/* Tag Cloud
+	 * ---------------------------------------- */
+	#tag-cloud {
+		font-family: $sans_serif_font;
+		font-size: 7pt;
+		font-weight: normal;
+		.level-1 {
+			font-size: 1.0em;
+		}
+		.level-2 {
+			font-size: 1.4em;
+		}
+		.level-3 {
+			font-size: 1.8em;
+		}
+		.level-4 {
+			font-size: 2.0em;
+		}
+		.level-5 {
+			font-size: 2.4em;
+		}
+	}

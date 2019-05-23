@@ -1,0 +1,270 @@
+
+/*
+* layout.css.scss
+*
+*/
+
+/*
+*/
+
+/* Table of Content
+==================================================
+*/
+
+@import "definitions";
+
+#header, #content {
+
+  ul.cssMenu {
+    margin: 0;
+    list-style: none;
+    font-family: $sans_serif_font;
+    font-size: 1em;
+    line-height: 1.2em;
+    padding: 0 0.2vw 0.2vw 0;
+    background-color: $toolbar_backcolor;
+    background-repeat: repeat;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cccccc #111111 #111111 #cccccc;
+    display: block;
+    width: 99.6%;
+    height: 1.75em;
+    z-index: 150;
+  }
+
+  ul.cssMenu ul {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 98%;
+    margin: 0;
+    list-style: none;
+    padding: 0 0.2vw 0.2vw 0;
+    background-color: #dddddd;
+    background-repeat: repeat;
+    border-color: #cccccc #111111 #111111 #cccccc;
+    border-width: 1px;
+    border-style: solid;
+    width: 18vw;
+    z-index: 150;
+  }
+  ul.cssMenu ul ul {
+    position: absolute;
+    left: 98%;
+    top: -2px;
+  }
+  ul.cssMenu ul li {
+    float: none;
+  }
+  ul.cssMenu ul li.sep span {
+    width: 100%;
+    height: 3px;
+  }
+  ul.cssMenu ul a {
+    text-align: left;
+    white-space: nowrap;
+  }
+  ul.cssMenu ul img {
+    width: 16px;
+    height: 16px;
+  }
+  ul.cssMenu ul span {
+    background-image: url(./images/arr_white.gif);
+  }
+  ul.cssMenu li {
+    display: block;
+    margin: 0.2vw 0 0 0.2vw;
+    font-size: 0.85em;
+    float: left;
+  }
+  ul.cssMenu li:hover>ul {
+    display: block;
+  }
+  ul.cssMenu li.dis a {
+    color: #666 !important;
+  }
+  ul.cssMenu li.dis a:hover {
+    display: block;
+    vertical-align: middle;
+    background-color: #dddddd;
+    border-width: 1px;
+    border-color: #dddddd;
+    border-style: solid;
+    text-align: left;
+    text-decoration: none;
+    padding: 0.2vw 10px 0.2vw 0.2vw;
+    _padding-left: 0;
+    font: 12px Tahoma;
+    color: #070777;
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.cssMenu li.dis a:hover img.over {
+    display: none !important;
+  }
+  ul.cssMenu li.dis a:hover img.def {
+    display: inline !important;
+  }
+  ul.cssMenu li.sep {
+    text-align: left;
+    padding: 0;
+    line-height: 0;
+    height: 100%;
+  }
+  ul.cssMenu li.sep a:hover {
+    display: block;
+    vertical-align: middle;
+    background-color: #dddddd;
+    border-width: 1px;
+    border-color: #dddddd;
+    border-style: solid;
+    text-align: left;
+    text-decoration: none;
+    padding: 0.2vw 10px 0.2vw 5px;
+    _padding-left: 0;
+    font: 12px Tahoma;
+    color: #070777;
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.cssMenu li.sep span {
+    float: none;
+    padding-right: 0;
+    width: 3px;
+    height: 100%;
+    display: inline-block;
+    background-color: #cccccc #111111 #111111 #cccccc;
+    background-image: none;
+  }
+  ul.cssMenu li:hover {
+    position: relative;
+  }
+  ul.cssMenu li:hover > a img.def {
+    display: none;
+  }
+  ul.cssMenu li:hover > a img.over {
+    display: inline;
+  }
+  ul.cssMenu li:hover>a {
+    background-color: #cec4be;
+    border-color: #eeeeee #333333 #333333 #eeeeee;
+    border-style: solid;
+    font: 12px Tahoma;
+    color: #070777;
+    text-decoration: none;
+  }
+  ul.cssMenu li a:hover {
+    position: relative;
+    background-color: #cec4be;
+    border-color: #eeeeee #333333 #333333 #eeeeee;
+    border-style: solid;
+    font: 12px Tahoma;
+    color: #070777;
+    text-decoration: none;
+  }
+  ul.cssMenu li:hover>a>span {
+    background-image: url(./images/arrv_white.gif);
+  }
+  ul.cssMenu table {
+    border-collapse: collapse;
+  }
+  ul.cssMenu a {
+    display: block;
+    vertical-align: middle;
+    background-color: #dddddd;
+    background-color: transparent;
+    border-width: 1px;
+    border-color: #dddddd;
+    border-color: transparent;
+    border-style: solid;
+    text-align: left;
+    text-decoration: none;
+    padding: 0.2vw 10px 0.2vw 5px;
+    _padding-left: 0;
+    font: 12px Tahoma;
+    color: #070777;
+    text-decoration: none;
+    cursor: default;
+  }
+  ul.cssMenu a:active, ul.cssMenu a:focus {
+    outline-style: none;
+  }
+  ul.cssMenu a:hover img.over {
+    display: inline;
+  }
+  ul.cssMenu a:hover img.def {
+    display: none;
+  }
+  ul.cssMenu a:hover ul {
+    display: block;
+  }
+  ul.cssMenu a:hover ul img.def {
+    display: inline;
+  }
+  ul.cssMenu a:hover ul img.over {
+    display: none;
+  }
+  ul.cssMenu a:hover ul ul {
+    display: none;
+  }
+  ul.cssMenu a:hover a:hover ul {
+    display: block;
+  }
+  ul.cssMenu a:hover a:hover ul img.def {
+    display: inline;
+  }
+  ul.cssMenu a:hover a:hover ul img.over {
+    display: none;
+  }
+  ul.cssMenu a:hover a:hover ul ul {
+    display: none;
+  }
+  ul.cssMenu a:hover a:hover a:hover ul {
+    display: block;
+  }
+  ul.cssMenu a:hover a:hover a:hover ul img.def {
+    display: inline;
+  }
+  ul.cssMenu a:hover a:hover a:hover ul img.over {
+    display: none;
+  }
+  ul.cssMenu a:hover a:hover a:hover img.over, ul.cssMenu a:hover a:hover a:hover a:hover img.over {
+    display: inline;
+  }
+  ul.cssMenu a:hover a:hover a:hover img.def, ul.cssMenu a:hover a:hover a:hover a:hover img.def {
+    display: none;
+  }
+  ul.cssMenu a:hover a:hover img.over {
+    display: inline;
+  }
+  ul.cssMenu a:hover a:hover img.def {
+    display: none;
+  }
+  ul.cssMenu a:hover span {
+    _background-image: url(./images/arrv_white.gif);
+  }
+  ul.cssMenu a:hover table span {
+    background-image: url(./images/arr_white.gif);
+  }
+  ul.cssMenu span {
+    overflow: hidden;
+    display: block;
+    background-image: url(./images/arr_white.gif);
+    background-position: right center;
+    background-repeat: no-repeat;
+    padding-right: 1vw;
+  }
+  ul.cssMenu img {
+    border: none;
+    float: left;
+    _float: none;
+    margin-right: 6px;
+    width: 16px;
+    height: 16px;
+  }
+  ul.cssMenu img.over {
+    display: none;
+  }
+
+}

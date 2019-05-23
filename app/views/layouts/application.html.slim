@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    title
+      = content_for?(:title) ? yield(:title) : 'SwitchYard'
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body
+    - content_for :title do @title end
+    - content_for :heading do @heading end
+
+    #wrap_frame
+      #header_frame
+        #logo_frame
+          #site_logo
+            = image_tag "SwitchYardLogo.png", alt: "SwitchYard Logo"
+        #header
+          h1= content_for?(:heading) ? yield(:heading) : 'x'
+          .navbar
+            = menubar do
+              = sub_menu('Home', '', root_path()) do
+                = menu_item('About', '', about_path())
+        #login_form
+          - if current_user
+            p
+              | Welcome
+              =< current_user.user_name ? current_user.user_name : current_user.email
+            li= link_to 'Sign out', logout_path
+          - else
+            p Welcome Guest
+            li= link_to 'Sign in', login_path
+            li= link_to 'Sign up', signup_path
+
+      hr.hidden /
+      #content_frame
+        - flash.each do |name, msg|
+          = content_tag :div, msg, :id => "flash_#{name}"
+        #content
+          = yield
+        hr.hidden /
+      #footer_frame
+        #footer
+          .footer_space
+            = ' '
+          .copyinfo
+            small
+              | Site created by:
+              = ' '
+              span.vcard
+                a(class="url fn" href="http://localhost:3000/" title="Visit my Home Site") Will Merrell
+              br/
+            small
+              | Copyright (c) 2019 by:
+              = ' '
+              a(href="http://localhost:3000/" title="Visit our Site") Will Merrell
+              br/
+          br.clear /
+        hr.hidden /

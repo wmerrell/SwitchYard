@@ -1,0 +1,36 @@
+$main_backcolor:            white;
+$main_forecolor:            black;
+
+$gray_backcolor:            #ddd1df;
+$gray_forecolor:            #333333;
+
+$link_normal_backcolor:     transparent;
+$link_normal_forecolor:     #000099;
+$link_visit_backcolor:      transparent;
+$link_visit_forecolor:      #0000ad;
+$link_hover_backcolor:      transparent;
+$link_hover_forecolor:      #4040d9;
+$link_active_backcolor:     transparent;
+$link_active_forecolor:     #4040d9;
+
+$toolbar_backcolor:         #dddddd;
+$toolbar_forecolor:         #000000;
+$toolbar_highcolor:         #e0e0e0;
+$toolbar_shadecolor:        #333333;
+$toolbar_hover_backcolor:   #cccccc;
+$toolbar_hover_forecolor:   #0000ff;
+$toolbar_active_backcolor:  #cccccc;
+$toolbar_active_forecolor:  #6666ff;
+
+$serif_font:          "Times New Roman", Times, serif;
+$sans_serif_font:     "HelveticaNeue", "Helvetica Neue", Helvetica, Tahoma, Arial, sans-serif;
+$monospaced_font:     "Courier New", Courier, monospaced, serif;
+$comic_font:          "Comic Sans", "Comic Sans MS", Tahoma, Arial, helvetica, sans-serif;
+$signiture_font:      "Bradley Hand ITC", "Brush Script MT", "Lucida Handwriting", "Comic Sans", "Comic Sans MS", cursive, Georgia, "Times New Roman", Times, serif;
+
+@mixin raisedborder($highcolor, $shadecolor, $width) {
+  border-top: $width solid $shadecolor;
+  border-left: $width solid $shadecolor;
+  border-right: $width solid $highcolor;
+  border-bottom: $width solid $highcolor;
+}

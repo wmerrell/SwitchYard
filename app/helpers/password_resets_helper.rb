@@ -1,0 +1,3 @@
+# PasswordResetsHelper
+module PasswordResetsHelper
+end
