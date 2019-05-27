@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_email(params[:email])
     if user&.authenticate(params[:password])
-      if params[:remember_me]
+      if params[:remember_me] == '1'
         cookies.permanent[:auth_token] = user.auth_token
       else
         cookies[:auth_token] = user.auth_token
@@ -17,6 +17,9 @@ class SessionsController < ApplicationController
       redirect_to root_url, notice: 'Signed In!'
     else
       flash.now.alert = 'Email or password is invalid'
+      @title = @heading = 'Sign In'
+      @intro = 'Sign In to SwitchYard'
+      @content = "Please Sign In to SwitchYard."
       render 'new'
     end
   end

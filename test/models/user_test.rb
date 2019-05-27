@@ -3,10 +3,10 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  user_name              :string
+#  user_name              :string           not null
 #  auth_token             :string
-#  email                  :string
-#  password_digest        :string
+#  email                  :string           not null
+#  password_digest        :string           not null
 #  password_reset_token   :string
 #  password_reset_sent_at :datetime
 #  created_at             :datetime         not null
@@ -68,5 +68,12 @@ class UserTest < Minitest::Test
     user2 = User.new(@attr.merge({user_name: 'Test User 2'}))
     refute user2.valid?, 'user2 is not valid with duplicate email'
     refute user2.save, 'user2 cannot be saved with duplicate email'
+  end
+
+  def test_send_password_reset
+    print "\nModel:User test_send_password_reset"
+    user = User.create!(@attr)
+    assert user.valid? 'saved user1 should be valid'
+    assert user&.send_password_reset
   end
 end

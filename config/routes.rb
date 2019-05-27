@@ -4,6 +4,7 @@
 #                      root GET    /                                                                                        home#index
 #                     index GET    /index(.:format)                                                                         home#index
 #                     about GET    /about(.:format)                                                                         home#about
+#                  postmail POST   /postmail(.:format)                                                                      home#postmail
 #                     users POST   /users(.:format)                                                                         users#create
 #                  new_user GET    /users/new(.:format)                                                                     users#new
 #                    signup GET    /signup(.:format)                                                                        users#new
@@ -32,7 +33,7 @@ Rails.application.routes.draw do
 
   get  '/index' => 'home#index', as: :index
   get  '/about' => 'home#about', as: :about
-  # post '/postmail' => 'home#postmail', as: :postmail
+  post '/postmail' => 'home#postmail', as: :postmail
 
   resources :users, only: [:new, :create]
   get 'signup', to: 'users#new', as: 'signup'
@@ -42,6 +43,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   get 'sessions/new'
   resources :password_resets, only: [:new, :create, :edit, :update]
-  #get new_password_reset_path, to: 'password_resets/new', as: 'password_reset'
 
 end

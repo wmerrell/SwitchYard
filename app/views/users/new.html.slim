@@ -9,12 +9,12 @@
   = form_for @user do |f|
     - if @user.errors.any?
       .error_messages
-      h2
-        | Form is invalid
-      ul
-        - @user.errors.full_messages.each do |message|
-          li
-            = message
+        h2
+          | There is an error on this form.
+        ul
+          - @user.errors.full_messages.each do |message|
+            li
+              = message
 
     .field
       = f.label :user_name

@@ -389,17 +389,6 @@
 
 	}
 
-	input[type="text"],
-	input[type="number"],
-	input[type="password"],
-	input[type="email"] {
-		width: 50%;
-	}
-
-	.field_with_errors {
-	  display: block;
-	}
-
 	/* Page Right Column
 	 * ---------------------------------------- */
 	#rightcolumn_frame {
@@ -538,9 +527,9 @@
 		.littlebuttons {
 			float: right;
 			margin: 5px 0 0 0;
-      a, a:visited {
-        text-decoration: none;
-      }
+			a, a:visited {
+				text-decoration: none;
+			}
 		}
 		.personinfo {
 			float: left;

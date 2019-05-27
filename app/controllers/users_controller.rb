@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @title = @heading = 'Sign Up'
     @intro = 'Sign Up as a New User.'
     @content = "You can\'t do anything in SwitchYard without signing in,
-                so create yourself as a user. Please use use the name you
+                so create yourself as a user account. Please use the name you
                 would like to be known as and a real email address."
     @user = User.new
   end
@@ -15,6 +15,11 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url, notice: 'Thank you for signing up!'
     else
+      @title = @heading = 'Sign Up'
+      @intro = 'Sign Up as a New User.'
+      @content = "You can\'t do anything in SwitchYard without signing in,
+                  so create yourself as a user account. Please use the name you
+                  would like to be known as and a real email address."
       render 'new'
     end
   end
@@ -22,6 +27,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:user_name, :auth_token, :email, :password, :password_confirmation)
+    params.require(:user).permit(:user_name, :email, :password, :password_confirmation)
   end
 end

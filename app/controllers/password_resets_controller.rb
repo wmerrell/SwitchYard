@@ -13,7 +13,9 @@ class PasswordResetsController < ApplicationController
   end
 
   def edit
-    @title = @heading = 'Listing Monsters'
+    @title = @heading = 'SwitchYard - Reset Password'
+    @intro = 'Reset your SwitchYard password.'
+    @content = "The password and the confirmation password must match."
     @user = User.find_by_password_reset_token!(params[:id])
   end
 
@@ -25,6 +27,9 @@ class PasswordResetsController < ApplicationController
     elsif @user.update_attributes(user_params)
       redirect_to root_url, notice: 'Password has been reset.'
     else
+      @title = @heading = 'SwitchYard - Reset Password'
+      @intro = 'Reset your SwitchYard password.'
+      @content = "The password and the confirmation password must match."
       render :edit
     end
   end
