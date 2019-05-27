@@ -3,7 +3,7 @@ class PasswordResetsController < ApplicationController
   def new
     @title = @heading = 'Forgot Password'
     @intro = 'Forgot Your Password'
-    @content = "Please enter the email you used when you signed up."
+    @content = 'Please enter the email you used when you signed up.'
   end
 
   def create
@@ -15,7 +15,7 @@ class PasswordResetsController < ApplicationController
   def edit
     @title = @heading = 'SwitchYard - Reset Password'
     @intro = 'Reset your SwitchYard password.'
-    @content = "The password and the confirmation password must match."
+    @content = 'The password and the confirmation password must match.'
     @user = User.find_by_password_reset_token!(params[:id])
   end
 
@@ -29,7 +29,7 @@ class PasswordResetsController < ApplicationController
     else
       @title = @heading = 'SwitchYard - Reset Password'
       @intro = 'Reset your SwitchYard password.'
-      @content = "The password and the confirmation password must match."
+      @content = 'The password and the confirmation password must match.'
       render :edit
     end
   end

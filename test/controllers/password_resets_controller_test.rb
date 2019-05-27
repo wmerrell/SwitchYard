@@ -33,14 +33,17 @@ class PasswordResetsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get edit user password' do
     print "\nController:PasswordResets should get edit user password"
-    get "/password_resets/zyxw_password_reset_token_dcba/edit", params: { id: 'zyxw_password_reset_token_dcba' }
+    get '/password_resets/zyxw_password_reset_token_dcba/edit',
+        params: { id: 'zyxw_password_reset_token_dcba' }
     assert_response :success
     assert_match 'Reset Password', @response.body
   end
 
   test 'post update should succeed on existing user' do
     print "\nController:PasswordResets post update should succeed on existing user"
-    patch  "/password_resets/zyxw_password_reset_token_dcba", params: { id: 'zyxw_password_reset_token_dcba',  user: { password: 'abcdef', password_confirmation: 'abcdef' } }
+    patch '/password_resets/zyxw_password_reset_token_dcba',
+          params: { id: 'zyxw_password_reset_token_dcba',
+                    user: { password: 'abcdef', password_confirmation: 'abcdef' } }
     assert_response :redirect
     follow_redirect!
     assert_response :success
@@ -51,7 +54,9 @@ class PasswordResetsControllerTest < ActionDispatch::IntegrationTest
     print "\nController:PasswordResets post update should fail when request is too old"
     @user.password_reset_sent_at = 3.hours.ago
     @user.save!
-    patch  "/password_resets/zyxw_password_reset_token_dcba", params: { id: 'zyxw_password_reset_token_dcba',  user: { password: 'abcdef', password_confirmation: 'abcdef' } }
+    patch '/password_resets/zyxw_password_reset_token_dcba',
+          params: { id: 'zyxw_password_reset_token_dcba',
+                    user: { password: 'abcdef', password_confirmation: 'abcdef' } }
     assert_response :redirect
     follow_redirect!
     assert_response :success
@@ -61,11 +66,11 @@ class PasswordResetsControllerTest < ActionDispatch::IntegrationTest
 
   test 'post update should fail when passwords dont match' do
     print "\nController:PasswordResets post update should fail when passwords dont match"
-    patch "/password_resets/zyxw_password_reset_token_dcba",
+    patch '/password_resets/zyxw_password_reset_token_dcba',
           params: { id: 'zyxw_password_reset_token_dcba',
                     user: { password: 'abcdef', password_confirmation: 'xyzzy' } }
     assert_response :success
     assert_match 'Reset your SwitchYard password.', @response.body
-    assert_match "<li>Password confirmation doesn&#39;t match Password</li>", @response.body
+    assert_match '<li>Password confirmation doesn&#39;t match Password</li>', @response.body
   end
 end

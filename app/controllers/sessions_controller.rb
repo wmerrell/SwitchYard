@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
     @title = @heading = 'Sign In'
     @intro = 'Sign In to SwitchYard'
-    @content = "Please Sign In to SwitchYard."
+    @content = 'Please Sign In to SwitchYard.'
   end
 
   def create
@@ -16,10 +16,10 @@ class SessionsController < ApplicationController
       end
       redirect_to root_url, notice: 'Signed In!'
     else
-      flash.now.alert = 'Email or password is invalid'
       @title = @heading = 'Sign In'
       @intro = 'Sign In to SwitchYard'
-      @content = "Please Sign In to SwitchYard."
+      @content = 'Please Sign In to SwitchYard.'
+      flash.now.alert = 'Email or password is invalid'
       render 'new'
     end
   end

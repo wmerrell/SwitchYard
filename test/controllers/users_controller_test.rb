@@ -7,7 +7,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       user_name: 'Test User',
       email: 'user@test.com',
       password: 'abcdef',
-      password_confirmation: 'abcdef',
+      password_confirmation: 'abcdef'
     }
   end
 
