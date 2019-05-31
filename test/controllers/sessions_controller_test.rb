@@ -14,7 +14,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should get new' do
     print "\nController:Sessions get sessions_new"
-    get sessions_new_url
+    get new_session_url
     assert_response :success
     assert_match '<h1>Sign In</h1>', @response.body
   end

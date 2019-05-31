@@ -23,6 +23,10 @@ html
             = menubar do
               = sub_menu('Home', '', root_path()) do
                 = menu_item('About', '', about_path())
+              = sub_menu('Layouts', '', sy_layouts_path(), logged_in?) do
+                = menu_item('Add a New Layout', '', new_sy_layout_path(), logged_in?)
+              = sub_menu('Modules', '', sy_modules_path(), logged_in?) do
+                = menu_item('Add a New Module', '', new_sy_module_path(), logged_in?)
         #login_form
           - if current_user
             p

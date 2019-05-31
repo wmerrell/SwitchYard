@@ -1,0 +1,18 @@
+.intro
+  h2= @intro
+.content_body
+  = @content
+
+  br/
+  p#notice = notice
+
+  p
+    strong Name:
+    = @sy_module.name
+  p
+    strong Owner:
+    = @sy_module.owner
+
+  => link_to 'Edit', edit_sy_module_path(@sy_module)
+  '|
+  =< link_to 'Back', sy_modules_path

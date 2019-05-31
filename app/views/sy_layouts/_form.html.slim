@@ -1,0 +1,19 @@
+= form_for @sy_layout do |f|
+  - if @sy_layout.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@sy_layout.errors.count, "error")} prohibited this layout from being saved:"
+      ul
+        - @sy_layout.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :owner
+    = f.text_field :owner
+  .field
+    = f.label :description
+    = f.text_area :description
+  .actions
+    = f.submit 'Save Layout'

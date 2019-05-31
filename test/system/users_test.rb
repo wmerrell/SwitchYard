@@ -6,4 +6,6 @@ class UsersTest < ApplicationSystemTestCase
     visit users_url
     assert_selector 'h1', text: 'Users'
   end
+
+  # TODO: add system tests
 end

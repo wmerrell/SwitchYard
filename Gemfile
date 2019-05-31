@@ -40,6 +40,7 @@ gem 'bcrypt'
 # gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'binding_of_caller'
+gem 'cancancan'
 gem 'friendly_id'
 gem 'high_voltage'
 gem 'jquery-rails'
@@ -51,7 +52,7 @@ gem 'redcarpet'
 
 # Gems I wrote
 gem 'cssmenu', path: '../cssmenu'
-gem 'ms_lorem', path: '../ms_lorem', group: :development
+gem 'ms_lorem', path: '../ms_lorem'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution

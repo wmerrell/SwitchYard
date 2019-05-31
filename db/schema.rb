@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_16_183653) do
+ActiveRecord::Schema.define(version: 2019_05_29_203730) do
+
+  create_table "sy_layouts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "owner"
+    t.text "description"
+    t.string "created_by", null: false
+    t.string "updated_by", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sy_modules", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "owner"
+    t.string "module_type"
+    t.integer "width"
+    t.integer "length"
+    t.text "description"
+    t.string "created_by", null: false
+    t.string "updated_by", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "user_name", null: false

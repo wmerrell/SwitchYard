@@ -1,0 +1,10 @@
+.intro
+  h2= @intro
+.content_body
+  = @content
+
+  br/
+
+  == render 'form'
+
+  = link_to 'Back', sy_layouts_path

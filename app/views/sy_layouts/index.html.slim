@@ -1,0 +1,34 @@
+.intro
+  h2
+    | Your SwitchYard Layouts
+.content_body
+  | This is a list of the Layouts that you manage. You can add another one any time.&nbsp;
+  | You can add any number of modules to any layout to define that layout.
+  br
+  hr.hidden
+  br
+
+  .content_list
+    table.outlined
+      thead
+        tr
+          th Layout Name
+          th Owner
+          th Description
+          th
+          th
+          th
+      tbody
+        - @sy_layouts.each do |sy_layout|
+          tr
+            td.left = link_to sy_layout.name, sy_layout
+            td = sy_layout.owner
+            td = sy_layout.description
+            td = link_to 'Show', sy_layout
+            td = link_to 'Edit', edit_sy_layout_path(sy_layout)
+            td = link_to 'Destroy', sy_layout,
+                         data: { confirm: 'Are you sure you want to delete this layout?' },
+                         method: :delete
+    br
+
+    = link_to 'New Layout', new_sy_layout_path
