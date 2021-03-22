@@ -1,21 +1,21 @@
 require 'application_system_test_case'
 
-class SyLayoutsTest < ApplicationSystemTestCase
+class RailwaysTest < ApplicationSystemTestCase
   setup do
-    @sy_layout = sy_layouts(:one)
+    @railway = railways(:one)
   end
 
   test 'visiting the index' do
-    visit sy_layouts_url
+    visit railways_url
     assert_selector 'h1', text: 'Layouts'
   end
 
   test 'creating a Layout' do
-    visit sy_layouts_url
+    visit railways_url
     click_on 'New Layout'
 
-    fill_in 'Name', with: @sy_layout.name
-    fill_in 'Owner', with: @sy_layout.owner
+    fill_in 'Name', with: @railway.name
+    fill_in 'Owner', with: @railway.owner
     click_on 'Create Layout'
 
     assert_text 'Layout was successfully created'
@@ -23,11 +23,11 @@ class SyLayoutsTest < ApplicationSystemTestCase
   end
 
   test 'updating a Layout' do
-    visit sy_layouts_url
+    visit railways_url
     click_on 'Edit', match: :first
 
-    fill_in 'Name', with: @sy_layout.name
-    fill_in 'Owner', with: @sy_layout.owner
+    fill_in 'Name', with: @railway.name
+    fill_in 'Owner', with: @railway.owner
     click_on 'Update Layout'
 
     assert_text 'Layout was successfully updated'
@@ -35,7 +35,7 @@ class SyLayoutsTest < ApplicationSystemTestCase
   end
 
   test 'destroying a Layout' do
-    visit sy_layouts_url
+    visit railways_url
     page.accept_confirm do
       click_on 'Destroy', match: :first
     end

@@ -1,3 +1,0 @@
-# SyModulesHelper
-module SyModulesHelper
-end

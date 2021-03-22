@@ -1,3 +1,0 @@
-# SyLayoutsHelper
-module SyLayoutsHelper
-end

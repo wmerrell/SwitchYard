@@ -10,14 +10,13 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require _definitions.scss
- *= require normalize.scss
- *= require base.scss
- *= require skeleton.scss
- *= require layout.scss
- *= require scaffolds.scss
- *= require cssmenu.scss
- *= require switchyard.scss
+ *= require ./normalize
+ *= require ./base
+ *= require ./skeleton
+ *= require ./layout
+ *= require ./scaffolds
+ *= require ./cssmenu
+ *= require ./switchyard
  *= require_tree .
  *= require_self
  */

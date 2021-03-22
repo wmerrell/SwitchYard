@@ -6,7 +6,7 @@ html
       = content_for?(:title) ? yield(:title) : 'SwitchYard'
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application'
   body
     - content_for :title do @title end
@@ -23,10 +23,10 @@ html
             = menubar do
               = sub_menu('Home', '', root_path()) do
                 = menu_item('About', '', about_path())
-              = sub_menu('Layouts', '', sy_layouts_path(), logged_in?) do
-                = menu_item('Add a New Layout', '', new_sy_layout_path(), logged_in?)
-              = sub_menu('Modules', '', sy_modules_path(), logged_in?) do
-                = menu_item('Add a New Module', '', new_sy_module_path(), logged_in?)
+              = sub_menu('Railways', '', railways_path(), logged_in?) do
+                = menu_item('Add a New Railway', '', new_railway_path(), logged_in?)
+              = sub_menu('Sections', '', sections_path(), logged_in?) do
+                = menu_item('Add a New Section', '', new_section_path(), logged_in?)
         #login_form
           - if current_user
             p
